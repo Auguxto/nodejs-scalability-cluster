@@ -8,7 +8,7 @@ const runPrimaryProcess = () => {
   );
 
   for (let index = 0; index < processesCount; index++) {
-    // cluster.fork();
+    cluster.fork();
   }
 
   cluster.fork();
@@ -18,7 +18,7 @@ const runPrimaryProcess = () => {
       console.log(
         `Worker ${worker.process.pid} crashed. Starting a new one...`
       );
-      // cluster.fork();
+      cluster.fork();
     }
   });
 };
