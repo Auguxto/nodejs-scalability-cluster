@@ -11,8 +11,6 @@ const runPrimaryProcess = () => {
     cluster.fork();
   }
 
-  cluster.fork();
-
   cluster.on("exit", (worker, code, signal) => {
     if (code !== 0 && !worker.exitedAfterDisconnect) {
       console.log(
